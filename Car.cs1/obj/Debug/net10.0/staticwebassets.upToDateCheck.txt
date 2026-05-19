@@ -1,0 +1,8 @@
+wwwroot\app.js
+wwwroot\data.js
+wwwroot\index.html
+wwwroot\styles.css
+C:\Users\Cgrip\source\repos\Car.cs1\Car.cs1\wwwroot\app.js
+C:\Users\Cgrip\source\repos\Car.cs1\Car.cs1\wwwroot\data.js
+C:\Users\Cgrip\source\repos\Car.cs1\Car.cs1\wwwroot\index.html
+C:\Users\Cgrip\source\repos\Car.cs1\Car.cs1\wwwroot\styles.css

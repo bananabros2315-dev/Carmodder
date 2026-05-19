@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ModTrack — Car Modification Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">Mod<span>Track</span></span>
+    </div>
+    <p class="tagline">Build, track performance, and total your mod costs</p>
+  </header>
+
+  <main class="app">
+    <section class="panel panel--cars" aria-labelledby="cars-heading">
+      <h2 id="cars-heading" class="panel-title">Select Your Car</h2>
+      <div id="car-segments" class="segment-filters" role="tablist" aria-label="Filter cars by type"></div>
+      <div id="car-groups" class="car-groups"></div>
+    </section>
+
+    <section class="panel panel--catalog" aria-labelledby="catalog-heading">
+      <h2 id="catalog-heading" class="panel-title">Modification Catalogs</h2>
+      <p class="panel-subtitle">Browse parts by category — each catalog is separate</p>
+      <div class="catalog-toolbar">
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input type="search" id="mod-search" class="search-input" placeholder="Search all catalogs…" autocomplete="off" />
+        </div>
+      </div>
+      <div class="catalog-layout">
+        <nav id="catalog-nav" class="catalog-nav" aria-label="Jump to catalog"></nav>
+        <div id="catalog-sections" class="catalog-sections"></div>
+      </div>
+    </section>
+
+    <section class="panel panel--build" aria-labelledby="build-heading">
+      <div class="build-header">
+        <h2 id="build-heading" class="panel-title">Your Build</h2>
+        <button type="button" id="clear-build" class="btn btn--ghost" disabled>Clear build</button>
+      </div>
+      <div id="selected-car" class="selected-car empty-state">
+        <p>Pick a car to start your build</p>
+      </div>
+      <div id="stats" class="stats hidden" aria-live="polite"></div>
+      <ul id="build-list" class="build-list" aria-label="Installed modifications"></ul>
+      <div id="empty-build" class="empty-state">
+        <p>No mods added yet — browse the catalogs</p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cost-bar" class="cost-bar" aria-live="polite">
+    <div class="cost-bar-inner">
+      <div class="cost-summary">
+        <span class="cost-label">Total build cost</span>
+        <span id="total-cost" class="cost-value">$0</span>
+      </div>
+      <div class="cost-meta">
+        <span id="mod-count">0 mods</span>
+        <span class="cost-divider">·</span>
+        <span id="hp-delta">+0 HP</span>
+      </div>
+    </div>
+  </aside>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
